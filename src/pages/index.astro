@@ -1,9 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+import { Image } from 'astro:assets';
+import localHeroImage from '../assets/img/main.png';
 ---
 
-<Layout title="Crunix">
+<Layout title="Edgar G. Vargas">
 	<main>
-		<h1>Main Page</h1>
+		<div class="flex flex-row items-center justify-center">
+			<h1 class="text-6xl font-bold">Edgar G. Vargas</h1>
+			<Image src={ localHeroImage } alt="Hero" loading="eager" />
+		</div>
 	</main>
 </Layout>
