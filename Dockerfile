@@ -1,15 +1,14 @@
-# FROM node:20.17.0-alpine3.20 AS build
-FROM oven/bun:1.1.27-alpine AS build
+FROM node:20.17.0-alpine3.20 AS build
 
 WORKDIR /app
 
 COPY package.json ./
 
-RUN bun install
+RUN npm install
 
 COPY . .
 
-RUN bun run build
+RUN npm run build
 
 FROM nginx:1.27.1-alpine3.20
 
